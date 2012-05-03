@@ -1,0 +1,89 @@
+BRANCH_GROUP Function DC0_0_SobelFilter : 0,26
+BRANCH_GROUP Scope
+DC0_1_Input = (DY) 9 16 Parameter_BRAM
+DC0_2_Output = (DY) 1 16 Parameter_BRAM
+DC0_3_Threshold = (DY) 1 16 Parameter_BRAM
+END
+BRANCH_GROUP Scope : 0,25
+DC1_4_p1 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_5_p2 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_6_p3 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_7_p4 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_8_p5 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_9_p6 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_10_p7 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_11_p8 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_12_p9 = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_13_Result = (MON) NULL Declaration_16Bits_SignedInteger
+DC1_14_Limit = (MON) NULL Declaration_16Bits_SignedInteger
+Temp5 = (ARRAY) 0 DC0_1_Input Access_BRAM_Unregistered
+DC1_4_p1 = (MON) Temp5 Assignment_16Bits_SignedInteger
+Temp10 = (ARRAY) 1 DC0_1_Input Access_BRAM_Unregistered
+DC1_5_p2 = (MON) Temp10 Assignment_16Bits_SignedInteger
+Temp15 = (ARRAY) 2 DC0_1_Input Access_BRAM_Unregistered
+DC1_6_p3 = (MON) Temp15 Assignment_16Bits_SignedInteger
+Temp20 = (ARRAY) 3 DC0_1_Input Access_BRAM_Unregistered
+DC1_7_p4 = (MON) Temp20 Assignment_16Bits_SignedInteger
+Temp25 = (ARRAY) 4 DC0_1_Input Access_BRAM_Unregistered
+DC1_8_p5 = (MON) Temp25 Assignment_16Bits_SignedInteger
+Temp30 = (ARRAY) 5 DC0_1_Input Access_BRAM_Unregistered
+DC1_9_p6 = (MON) Temp30 Assignment_16Bits_SignedInteger
+Temp35 = (ARRAY) 6 DC0_1_Input Access_BRAM_Unregistered
+DC1_10_p7 = (MON) Temp35 Assignment_16Bits_SignedInteger
+Temp40 = (ARRAY) 7 DC0_1_Input Access_BRAM_Unregistered
+DC1_11_p8 = (MON) Temp40 Assignment_16Bits_SignedInteger
+Temp45 = (ARRAY) 8 DC0_1_Input Access_BRAM_Unregistered
+DC1_12_p9 = (MON) Temp45 Assignment_16Bits_SignedInteger
+DC1_14_Limit = (MON) 4 Assignment_16Bits_SignedInteger
+Temp55 = (DY) DC1_4_p1 DC1_6_p3 Addition_16Bits_SignedInteger
+Temp57 = (DY) DC1_5_p2 DC1_5_p2 Addition_16Bits_SignedInteger
+Temp58 = (DY) Temp55 Temp57 Addition_16Bits_SignedInteger
+Temp61 = (DY) DC1_10_p7 DC1_12_p9 Addition_16Bits_SignedInteger
+Temp63 = (DY) DC1_11_p8 DC1_11_p8 Addition_16Bits_SignedInteger
+Temp64 = (DY) Temp61 Temp63 Addition_16Bits_SignedInteger
+Temp65 = (DY) Temp58 Temp64 Subtraction_16Bits_SignedInteger
+Temp69 = (DY) DC1_10_p7 DC1_12_p9 Addition_16Bits_SignedInteger
+Temp71 = (DY) DC1_11_p8 DC1_11_p8 Addition_16Bits_SignedInteger
+Temp72 = (DY) Temp69 Temp71 Addition_16Bits_SignedInteger
+Temp75 = (DY) DC1_4_p1 DC1_6_p3 Addition_16Bits_SignedInteger
+Temp77 = (DY) DC1_5_p2 DC1_5_p2 Addition_16Bits_SignedInteger
+Temp78 = (DY) Temp75 Temp77 Addition_16Bits_SignedInteger
+Temp79 = (DY) Temp72 Temp78 Subtraction_16Bits_SignedInteger
+Temp80 = (DY) Temp65 Temp79 Addition_16Bits_SignedInteger
+Temp85 = (DY) DC1_6_p3 DC1_12_p9 Addition_16Bits_SignedInteger
+Temp87 = (DY) DC1_9_p6 DC1_9_p6 Addition_16Bits_SignedInteger
+Temp88 = (DY) Temp85 Temp87 Addition_16Bits_SignedInteger
+Temp91 = (DY) DC1_4_p1 DC1_10_p7 Addition_16Bits_SignedInteger
+Temp93 = (DY) DC1_7_p4 DC1_7_p4 Addition_16Bits_SignedInteger
+Temp94 = (DY) Temp91 Temp93 Addition_16Bits_SignedInteger
+Temp95 = (DY) Temp88 Temp94 Subtraction_16Bits_SignedInteger
+Temp99 = (DY) DC1_4_p1 DC1_10_p7 Addition_16Bits_SignedInteger
+Temp101 = (DY) DC1_7_p4 DC1_7_p4 Addition_16Bits_SignedInteger
+Temp102 = (DY) Temp99 Temp101 Addition_16Bits_SignedInteger
+Temp105 = (DY) DC1_6_p3 DC1_12_p9 Addition_16Bits_SignedInteger
+Temp107 = (DY) DC1_9_p6 DC1_9_p6 Addition_16Bits_SignedInteger
+Temp108 = (DY) Temp105 Temp107 Addition_16Bits_SignedInteger
+Temp109 = (DY) Temp102 Temp108 Subtraction_16Bits_SignedInteger
+Temp110 = (DY) Temp95 Temp109 Addition_16Bits_SignedInteger
+Temp111 = (DY) Temp80 Temp110 Addition_16Bits_SignedInteger
+DC1_13_Result = (MON) Temp111 Assignment_16Bits_SignedInteger
+END
+BRANCH_GROUP If : 18,21
+BRANCH_GROUP Scope : 18,21
+DEC114 = (DY) DC1_13_Result  DC1_14_Limit GreaterThan_16Bits_SignedInteger
+Temp114 = (MON) DEC114 ClockBit
+END
+BRANCH_GROUP Scope : 18,20
+DC0_2_Output = (ARRAY) 255 0 Assignment_BRAM_Unregistered
+END
+BRANCH_GROUP Else : 18,21
+BRANCH_GROUP Scope : 18,21
+DEC120 = (MON) Temp114 NOT_1Bit
+Temp120= (MON) DEC120 ClockBit
+END
+BRANCH_GROUP Scope : 21,23
+DC0_2_Output = (ARRAY) 0 0 Assignment_BRAM_Unregistered
+END
+END
+END
+END

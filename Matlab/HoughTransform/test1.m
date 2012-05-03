@@ -1,6 +1,6 @@
 %% Prepare Test File
 % Read Bitmap from File
-J = uint16(imread('./TestImages/sobelOutput.bmp', 'bmp'));
+J = uint16(imread('./TestImages/test_landing.bmp', 'bmp'));
 
 % Prepare each color
 jR = uint16(bitand(bitshift((J(:,:,1) * (31/255)), 11),63488));
@@ -14,7 +14,7 @@ imgJ = bitor(bitor(jR, jG), jB);
 %% Perform Hough Transform
 
 % Sobel Adjustments
-s_Divisor = 512;
+s_Divisor = 64;
 
 % Create Empty Image
 sobelJ = uint16(zeros(480,640));

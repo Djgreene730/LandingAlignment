@@ -14,7 +14,7 @@ imgJ = bitor(bitor(jR, jG), jB);
 %% Perform Spacial Filtering - Sobel Operation
 
 % Sobel Adjustments
-s_Divisor = 512;
+s_Divisor = 64;
 
 % Create Empty Image
 sobelJ = uint16(zeros(480,640));

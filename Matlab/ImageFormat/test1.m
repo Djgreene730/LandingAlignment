@@ -18,7 +18,7 @@ imgRGB = cat(3,imgR,imgG,imgB);  %# Concatenate along the third dimension
 
 
 %% Plot Data
-%# Perform the above conversions to get imgRGB
+% Perform the above conversions to get imgRGB
 subplot(1,3,1);
 imshow('./TestImages/Center.bmp');
 title('Original Bitmap Image');

@@ -18,10 +18,13 @@ imgRGB = cat(3,imgR,imgG,imgB);  %# Concatenate along the third dimension
 
 
 %% Plot Data
-%# Perform the above conversions to get imgRGB
-subplot(1,2,1);
+% Perform the above conversions to get imgRGB
+subplot(1,3,1);
+imshow('./TestImages/Center.bmp');
+title('Original Bitmap Image');
+subplot(1,3,2);
 imshow(imgJ);
-title('Original uint16 image');
-subplot(1,2,2);
+title('16-Bit RGB565 Converter Image');
+subplot(1,3,3);
 imshow(imgRGB);
-title('Corresponding RGB image');
+title('Reconverted to 24-Bit TrueColor');
